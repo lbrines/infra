@@ -1,0 +1,24 @@
+- name: Add the user srvc-ansible
+  ansible.builtin.user:
+    name: srvc-ansible
+    comment: User ansible
+    uid: 2000
+
+- name: sudo without password for wheel group
+  copy:
+    content: 'srvc-ansible ALL=(ALL:ALL) NOPASSWD:ALL'
+    dest: /etc/sudoers.d/ansible_nopasswd
+    mode: 0440
+
+- name: make direcotry
+  file:
+    path: "/home/srvc-ansible/.ssh"
+    state: directory
+
+- name: copy authorized_keys
+  ansible.builtin.copy:
+    src: file/authorized_keys
+    dest: /home/srvc-ansible/.ssh/authorized_keys
+    owner: srvc-ansible
+    group: srvc-ansible
+    mode: '600'

@@ -1,0 +1,5 @@
+---
+- hosts: newservers
+  remote_user: root
+  roles:
+    - user_ansible
