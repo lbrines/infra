@@ -1,0 +1,24 @@
+- name: Add the user srvc-ansible
+  ansible.builtin.user:
+    name: srvc-rke
+    comment: User rke
+    uid: 2001
+
+- name: sudo without password for wheel group
+  copy:
+    content: 'rke ALL=(ALL) ALL'
+    dest: /etc/sudoers.d/rke
+    mode: 0440
+
+- name: make direcotry
+  file:
+    path: "/home/srvc-rke/.ssh"
+    state: directory
+
+- name: copy authorized_keys
+  ansible.builtin.copy:
+    src: file/authorized_rke
+    dest: /home/srvc-ansible/.ssh/authorized_keys
+    owner: srvc-rke
+    group: srvc-rke
+    mode: '600'
