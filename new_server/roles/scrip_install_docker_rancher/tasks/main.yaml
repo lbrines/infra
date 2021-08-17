@@ -14,7 +14,7 @@
   yum:
    name: "{{ packages }}"
    vars:
-   packages:
-   - docker-ce 
-   - docker-ce-cli
-   - containerd.io 
+    packages:
+    - docker-ce 
+    - docker-ce-cli
+    - containerd.io 
