@@ -1,2 +1,14 @@
-- name: Run script install docker
-  ansible.builtin.command: curl https://releases.rancher.com/install-docker/20.10.sh | sh
+- name: Add repository Docker
+  yum_repository:
+    name: docker
+    description: Docker YUM repo
+    baseurl: https://download.docker.com/linux/centos/docker-ce.repo
+
+- name: Install a list of packages docker
+  yum:
+   name: "{{ packages }}"
+   vars:
+   packages:
+   - docker-ce 
+   - docker-ce-cli
+   - containerd.io 
