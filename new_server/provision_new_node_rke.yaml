@@ -1,6 +1,6 @@
 ---
 - hosts: newservers
-  remote_user: ansible
+  remote_user: srvc-ansible
   roles:
    - scrip_install_docker_rancher  
    - user_rke
