@@ -1,0 +1,6 @@
+---
+- hosts: newservers
+  remote_user: ansible
+  roles:
+   - scrip_install_docker_rancher  
+   - user_rke

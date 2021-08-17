@@ -1,0 +1,2 @@
+- name: Run script install docker
+  ansible.builtin.command: curl https://releases.rancher.com/install-docker/20.10.sh | sh

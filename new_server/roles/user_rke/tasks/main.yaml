@@ -3,12 +3,7 @@
     name: srvc-rke
     comment: User rke
     uid: 2001
-
-- name: sudo without password for wheel group
-  copy:
-    content: 'rke ALL=(ALL) ALL'
-    dest: /etc/sudoers.d/rke
-    mode: 0440
+    groups: docker
 
 - name: make direcotry
   file:
