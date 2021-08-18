@@ -4,6 +4,9 @@
    state: touch
    mode: '0644'
 
+- name: Install utils
+  yum: yum-utils
+
 - name: Add repository Docker
   yum_repository:
     name: docker
