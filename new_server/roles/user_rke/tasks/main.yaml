@@ -12,7 +12,7 @@
 
 - name: copy authorized_keys
   ansible.builtin.copy:
-    src: ../file/authorized_rke
+    src: ~/ssh/rke
     dest: /home/srvc-rke/.ssh/authorized_keys
     owner: srvc-rke
     group: srvc-rke
