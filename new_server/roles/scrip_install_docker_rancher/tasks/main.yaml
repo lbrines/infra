@@ -12,7 +12,7 @@
 
 - name: Install a list of packages docker
   yum:
-   name: "{{ packages }}"
+    name: "{{ packages }}"
    vars:
     packages:
     - docker-ce 
