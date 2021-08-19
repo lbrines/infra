@@ -3,5 +3,6 @@
   remote_user: srvc-ansible
   become: yes
   roles:
+   - stop_firewalld
    - scrip_install_docker_rancher  
    - user_rke
