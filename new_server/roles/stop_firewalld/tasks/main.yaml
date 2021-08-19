@@ -1,0 +1,5 @@
+- name: Stop service firewalld and disanable
+  ansible.builtin.service:
+    name: docker
+    state: stopped
+    enabled: no
